@@ -1,0 +1,562 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "AwsMicroservicesStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "AwsMicroservicesStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "AwsMicroservicesStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "AwsMicroservicesStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2288870c8a59df815cd20d61d122b7351418fcb399592cb3435885cd041a933e.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "AwsMicroservicesStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "AwsMicroservicesStack.assets"
+      ],
+      "metadata": {
+        "/AwsMicroservicesStack/Database/product": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "DatabaseproductBE56BBBC"
+            }
+          }
+        ],
+        "/AwsMicroservicesStack/Database/product/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DatabaseproductBE56BBBC"
+          }
+        ],
+        "/AwsMicroservicesStack/Database/basket": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "Databasebasket29DC52FA"
+            }
+          }
+        ],
+        "/AwsMicroservicesStack/Database/basket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Databasebasket29DC52FA"
+          }
+        ],
+        "/AwsMicroservicesStack/Database/order": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "DatabaseorderF9147259"
+            }
+          }
+        ],
+        "/AwsMicroservicesStack/Database/order/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DatabaseorderF9147259"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/productLambdaFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesproductLambdaFunctionServiceRole07E31FF9"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/productLambdaFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesproductLambdaFunctionServiceRoleDefaultPolicy050D261C"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/productLambdaFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesproductLambdaFunction1847FAE1"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/basketLambdaFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesbasketLambdaFunctionServiceRoleE89AC3CD"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/basketLambdaFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesbasketLambdaFunctionServiceRoleDefaultPolicy54C55EF3"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/basketLambdaFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesbasketLambdaFunction071CF863"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/orderingLambdaFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesorderingLambdaFunctionServiceRole199F26DD"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/orderingLambdaFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesorderingLambdaFunctionServiceRoleDefaultPolicyCD58244C"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/orderingLambdaFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesorderingLambdaFunctionE3F4B923"
+          }
+        ],
+        "/AwsMicroservicesStack/Microservices/orderingLambdaFunction/SqsEventSource:AwsMicroservicesStackQueueQrderQueue6466A15B/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MicroservicesorderingLambdaFunctionSqsEventSourceAwsMicroservicesStackQueueQrderQueue6466A15BBB8C766A"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApi5E6AF916"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiCloudWatchRole895CDE03"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiAccountAF671D92"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiDeploymentF6F647B1651c4c8649d5f22487996fa08725958d"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiDeploymentStageprodAFF379A7"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiEndpoint84A1AEAC"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproduct2AD235FD"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/GET/ApiPermission.AwsMicroservicesStackApiGatewayproductApiB994A004.GET..product": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductGETApiPermissionAwsMicroservicesStackApiGatewayproductApiB994A004GETproductC49CC000"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/GET/ApiPermission.Test.AwsMicroservicesStackApiGatewayproductApiB994A004.GET..product": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductGETApiPermissionTestAwsMicroservicesStackApiGatewayproductApiB994A004GETproduct1BD1354D"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductGETF26D0FFA"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/POST/ApiPermission.AwsMicroservicesStackApiGatewayproductApiB994A004.POST..product": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductPOSTApiPermissionAwsMicroservicesStackApiGatewayproductApiB994A004POSTproductAC13BA28"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/POST/ApiPermission.Test.AwsMicroservicesStackApiGatewayproductApiB994A004.POST..product": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductPOSTApiPermissionTestAwsMicroservicesStackApiGatewayproductApiB994A004POSTproduct844A3CB5"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductPOST58D823E1"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductid5CFA6BB3"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/GET/ApiPermission.AwsMicroservicesStackApiGatewayproductApiB994A004.GET..product.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidGETApiPermissionAwsMicroservicesStackApiGatewayproductApiB994A004GETproductidDE5EF0AE"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/GET/ApiPermission.Test.AwsMicroservicesStackApiGatewayproductApiB994A004.GET..product.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidGETApiPermissionTestAwsMicroservicesStackApiGatewayproductApiB994A004GETproductid09EA2080"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidGETFA87F271"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/PUT/ApiPermission.AwsMicroservicesStackApiGatewayproductApiB994A004.PUT..product.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidPUTApiPermissionAwsMicroservicesStackApiGatewayproductApiB994A004PUTproductid547DD831"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/PUT/ApiPermission.Test.AwsMicroservicesStackApiGatewayproductApiB994A004.PUT..product.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidPUTApiPermissionTestAwsMicroservicesStackApiGatewayproductApiB994A004PUTproductidFF117E1F"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/PUT/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidPUTBE56285C"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/DELETE/ApiPermission.AwsMicroservicesStackApiGatewayproductApiB994A004.DELETE..product.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidDELETEApiPermissionAwsMicroservicesStackApiGatewayproductApiB994A004DELETEproductid592E151F"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/DELETE/ApiPermission.Test.AwsMicroservicesStackApiGatewayproductApiB994A004.DELETE..product.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidDELETEApiPermissionTestAwsMicroservicesStackApiGatewayproductApiB994A004DELETEproductidB2B8E29C"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/productApi/Default/product/{id}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayproductApiproductidDELETE7518B206"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApi4244E88C"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApiCloudWatchRole1EEC7C22"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApiAccount5A36BD8A"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApiDeployment82198B9011b17757f0192179d6fcd98fe5d50ba1"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApiDeploymentStageprodC33E12CB"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApiEndpointEA878E69"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketAB94F2BE"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/GET/ApiPermission.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.GET..basket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketGETApiPermissionAwsMicroservicesStackApiGatewaybasketApi07D74C8FGETbasket42AB8D12"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/GET/ApiPermission.Test.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.GET..basket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketGETApiPermissionTestAwsMicroservicesStackApiGatewaybasketApi07D74C8FGETbasket2E1E6E3C"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketGET355AC3B6"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/POST/ApiPermission.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.POST..basket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketPOSTApiPermissionAwsMicroservicesStackApiGatewaybasketApi07D74C8FPOSTbasket1B63A80F"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/POST/ApiPermission.Test.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.POST..basket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketPOSTApiPermissionTestAwsMicroservicesStackApiGatewaybasketApi07D74C8FPOSTbasket4A126CBB"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketPOST2DAB66F0"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/{username}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketusername3872D8E0"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/{username}/GET/ApiPermission.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.GET..basket.{username}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketusernameGETApiPermissionAwsMicroservicesStackApiGatewaybasketApi07D74C8FGETbasketusernameFE1A1E48"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/{username}/GET/ApiPermission.Test.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.GET..basket.{username}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketusernameGETApiPermissionTestAwsMicroservicesStackApiGatewaybasketApi07D74C8FGETbasketusername207732EF"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/{username}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketusernameGET043595FE"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/{username}/DELETE/ApiPermission.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.DELETE..basket.{username}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketusernameDELETEApiPermissionAwsMicroservicesStackApiGatewaybasketApi07D74C8FDELETEbasketusername4A2DC7C2"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/{username}/DELETE/ApiPermission.Test.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.DELETE..basket.{username}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketusernameDELETEApiPermissionTestAwsMicroservicesStackApiGatewaybasketApi07D74C8FDELETEbasketusername4841714F"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/{username}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketusernameDELETE0E545ACB"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/checkout/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketcheckoutA2D13CC3"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/checkout/POST/ApiPermission.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.POST..basket.checkout": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketcheckoutPOSTApiPermissionAwsMicroservicesStackApiGatewaybasketApi07D74C8FPOSTbasketcheckout825D4B8C"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/checkout/POST/ApiPermission.Test.AwsMicroservicesStackApiGatewaybasketApi07D74C8F.POST..basket.checkout": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketcheckoutPOSTApiPermissionTestAwsMicroservicesStackApiGatewaybasketApi07D74C8FPOSTbasketcheckoutB50C5AC6"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/basketApi/Default/basket/checkout/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaybasketApibasketcheckoutPOSTC897D61D"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiCB0F2CFB"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiCloudWatchRoleEE992296"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiAccount8AE3A982"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiDeploymentB69823E1f55cec5f5a79b3dcf637570b0bc18707"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiDeploymentStageprod3DF12900"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiEndpointAA9C4874"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Default/order/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiorder1DDCC09E"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Default/order/GET/ApiPermission.AwsMicroservicesStackApiGatewayorderApiE01E6DBA.GET..order": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiorderGETApiPermissionAwsMicroservicesStackApiGatewayorderApiE01E6DBAGETorder2A9389B9"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Default/order/GET/ApiPermission.Test.AwsMicroservicesStackApiGatewayorderApiE01E6DBA.GET..order": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiorderGETApiPermissionTestAwsMicroservicesStackApiGatewayorderApiE01E6DBAGETorder756E7A80"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Default/order/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiorderGETB4685F6E"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Default/order/{username}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiorderusername7B56E420"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Default/order/{username}/GET/ApiPermission.AwsMicroservicesStackApiGatewayorderApiE01E6DBA.GET..order.{username}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiorderusernameGETApiPermissionAwsMicroservicesStackApiGatewayorderApiE01E6DBAGETorderusername155DD4DC"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Default/order/{username}/GET/ApiPermission.Test.AwsMicroservicesStackApiGatewayorderApiE01E6DBA.GET..order.{username}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiorderusernameGETApiPermissionTestAwsMicroservicesStackApiGatewayorderApiE01E6DBAGETorderusername924F7B48"
+          }
+        ],
+        "/AwsMicroservicesStack/ApiGateway/orderApi/Default/order/{username}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayorderApiorderusernameGET5DBEA509"
+          }
+        ],
+        "/AwsMicroservicesStack/Queue/QrderQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueueQrderQueueCC0BA8E0"
+          }
+        ],
+        "/AwsMicroservicesStack/Queue/QrderQueue/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueueQrderQueuePolicy0604B39B"
+          }
+        ],
+        "/AwsMicroservicesStack/EventBus/SwnEventBus/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EventBusSwnEventBusF2A2AC9A"
+          }
+        ],
+        "/AwsMicroservicesStack/EventBus/CheckoutBasketRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EventBusCheckoutBasketRuleDEEBDEDC"
+          }
+        ],
+        "/AwsMicroservicesStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/AwsMicroservicesStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/AwsMicroservicesStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/AwsMicroservicesStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "AwsMicroservicesStack"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "version": "20.0.0",
+  "files": {
+    "bb2df7f60caaa66277a6d49bd563bc1a1d888b13fd89aeb10823b27766ac56b3": {
+      "source": {
+        "path": "/Users/xiangyuhe/Desktop/Syracuse/Project/AWS_MicroService/aws-microservices",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "bb2df7f60caaa66277a6d49bd563bc1a1d888b13fd89aeb10823b27766ac56b3.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "0cd11e98545c158036f7f7fce3c9c11d74b90b0da40f776320903532fb696bb8": {
+      "source": {
+        "path": "/Users/xiangyuhe/Desktop/Syracuse/Project/AWS_MicroService/aws-microservices",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "0cd11e98545c158036f7f7fce3c9c11d74b90b0da40f776320903532fb696bb8.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "1ad91878934098d320bf670d8260159fdef65e2eab70e9abbb3cb6261380dffb": {
+      "source": {
+        "path": "/Users/xiangyuhe/Desktop/Syracuse/Project/AWS_MicroService/aws-microservices",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "1ad91878934098d320bf670d8260159fdef65e2eab70e9abbb3cb6261380dffb.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "2288870c8a59df815cd20d61d122b7351418fcb399592cb3435885cd041a933e": {
+      "source": {
+        "path": "AwsMicroservicesStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "2288870c8a59df815cd20d61d122b7351418fcb399592cb3435885cd041a933e.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
